@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>dev2dev Mashup Demo</title>
+</head>
+<body>
+<h2>dev2dev Mashup Demo</h2>
+<p>
+This demo shows how a developer can build a very simple Mashup using the technologies described in the tutorial.
+It presumes that two services have already been built:
+<ul>
+<li>A REST service that returns a list of dev2dev Tech Days venues with addresses</li>
+<li>A service that converts an address into a Google Maps image</li>
+</ul>
+</p>
+
+
+<h4>Installing the Demo</h4>
+<p>
+All that is required is a web server.
+Copy the contents of the zip file onto the web server.
+</p>
+
+<h4>Generating a Google Maps API Key</h4>
+<p>
+You will need to generate a Google Maps API key (it's free) and update the key in ajaxGoogleMapsMashup.html.
+To generate a key, you will be asked to provide a URL.
+Your URL will look something like: <i>http://ajaxmashup.googlepages.com</i>.
+Navigate <a href="http://www.google.com/apis/maps/signup.html">here to generate your key.</a>
+</p>
+<p>
+You will need to insert your key in the script URL for Google Maps:
+</p>
+<pre>
+&lt;script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=YOUR_KEY_HERE"
+  type="text/javascript">&lt;/script>
+</pre>
+
+
+<h4>Running the Demo</h4>
+<p>
+The finished product can be accessed at <i>http://yourhost/yourpath/ajaxGoogleMapsMashup.html</i>.
+</p>
+
+</body>
+</html>

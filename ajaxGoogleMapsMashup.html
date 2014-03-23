@@ -1,0 +1,78 @@
+<!--  
+This demo was created by Peter Laird, BEA Systems
+Read my blog at http://dev2dev.bea.com/blog/plaird
+ -->
+<html>	
+<head>		
+<title>A Simple Hello World Ajax Google Maps Mashup Example</title>                
+<style type="text/css" media="screen"></style>		
+
+<!--  Script include required for Google Maps, note the Google Maps Key embedded in the URL.
+      You need to generate your own key to reuse this file, go to http://www.google.com/apis/maps/signup.html -->
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAATGl5mjhVG3Pi59145Eg15BQks13MRzc79hSJFudA1UKFwWJHphTxjyN5Sh0Ly52pA55Y68xaSoV1vA"
+  type="text/javascript"></script>
+
+<!--  A boiler plate script to detect the browser version, and center the map on the default location -->
+<script type="text/javascript">
+//<![CDATA[
+function load() {
+  if (GBrowserIsCompatible()) {
+    var map = new GMap2(document.getElementById("google_map_div"));
+    map.setCenter(new GLatLng(37.4419, -122.1419), 13);
+  }
+}
+//]]>
+</script>
+
+<!--  Include the Javascript that was hand built for this simple Hello World demo -->
+<script type="text/javascript" src="mapper.js"></script>
+
+</head>	
+
+<!--  the onload handler will check the browser version and set the map to the default location -->
+<body  onload="load()" onunload="GUnload()">	
+	
+<h2 align="center">BEA dev2dev Tech Days Location Viewer - Simple Google Maps Mashup Example</h2>		
+<p align="center">
+Author: Peter Laird, BEA Systems
+</p>
+<p align="center">
+This is a simple Hello World demo of an Ajax powered Google Maps mashup.<br/>
+It is intentionally simple so it can be a starting point for your mashup project.<br/>
+The code consists of a Javascript file that shows how to use technologies such<br/>
+as the XMLHttpRequest, the GMap2 API, and the geocoder object.
+</p>
+<p  align="center">
+<b>Using the Mashup:</b><br/>
+Click on the button to view the list of cities where <a href="http://bea.com/techdays/">BEA dev2dev Tech Days</a> will visit in 2007.<br/>
+Then, click on a location to view the map of that venue. 
+</p>
+
+<!--  Error messages will be inserted in the status_div if they arise -->
+<p id="status_div"></p>
+
+<table>
+<tr>
+<td valign="top">
+	<!--  This is the spot where the Javascript code will inject the map picture, referenced by mapper.js -->
+    <div id="google_map_div" style="width: 500px; height: 500px"></div>
+</td>
+<td valign="top">
+<p id="getLocations_div" align="center">
+	<!-- This demo requires a user to click a button to get the list of locations to make it easier to follow/debug.
+		 You normally would do this during onload() -->
+	<form id="getLocationsForm">
+		<input value="Get the Locations" type="submit" onclick="javascript:getLocationsAndMap();return false" />
+	</form>
+</p>
+<p>
+<div id="locations_div">
+  <!--  This div will receive the Mashed up list of locations from the getLocationsAndMap() function -->
+</div>
+</p>
+</td>
+</tr>
+</table>
+
+</body>	
+</html>
